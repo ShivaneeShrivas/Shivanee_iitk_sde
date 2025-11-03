@@ -21,7 +21,7 @@ Data Visualization -	Auto-generates simple plots from tabular data
 Export Options	- Export reports as PDF or Google Docs
 Dark Mode	Smooth and accessible UI for all users
 
-## ⚙️ System Architecture
+## System Architecture
 
 | Component | Description |
 | :--- | :--- |
@@ -30,7 +30,6 @@ Dark Mode	Smooth and accessible UI for all users
 | **AI Model** | Gemini API |
 
 ---
-
 ## Technologies Used
 
 | Stack | Technology | Reason for Choice |
@@ -48,22 +47,16 @@ script.js	- Handles user interaction, chatbot UI, and backend API calls
 server.js -	Node.js backend server handling API requests
 interaction logs
 
-Technologies Used:
-Stack -	Technology	- Reason for Choice
-Frontend - HTML5, CSS3, JavaScript -	Simplicity and responsiveness
-Backend	- Node.js (Express) -	Lightweight, fast, and ideal for APIs
-AI Model	- Gemini API -	Contextual and reliable responses
-Version Control-	Git & GitHub	- Collaboration and submission
-Document Export	- JavaScript Blob/PDF APIs	- Client-side file export
+### System Design Flow
 
-System Design:
-[User Interface]
-      ↓
-[Frontend JS]
-      ↓
-[Express Backend] → [Gemini AI API]
-      ↓
-[Structured Output (Report / Insights)]
+The system processes requests through the following sequence:
+
+1.  **User Interface (UI):** User initiates an action (e.g., submits notes, asks a question).
+2.  **Frontend JavaScript:** Handles the interaction and prepares the API request.
+3.  **Express Backend:** Receives the request and acts as the secure intermediary.
+4.  **Gemini AI API:** Processes the request (e.g., report generation, Q&A) using the AI model.
+5.  **Express Backend:** Receives the structured AI response.
+6.  **Structured Output:** Data is sent back to the frontend for display as a final report or insight.
 
 Setup Instructions:
 1. Clone the repository
