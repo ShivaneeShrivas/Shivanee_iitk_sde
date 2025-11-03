@@ -1,11 +1,8 @@
 ChemE Research Companion
 
-Shivanee Shrivas
-Institute: IIT Kanpur
-Department: Chemical 
-Repository: Shivanee_iitk_sde
+Shivanee Shrivas, IIT Kanpur, Chemical Department
 
-- Overview
+Overview
 ChemE Research Companion is an AI-powered assistant designed to help Chemical Engineering students and researchers organize experimental notes, generate professional reports, and interact with an intelligent chatbot (ChemBot) for guidance.
 
 The system provides:
