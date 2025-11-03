@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChemE Research Companion</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app" class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">🧪</div>
+        <div class="title">
+          <h1>ChemE Research Companion</h1>
+          <small>AI Research Partner</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-btn active" data-tab="report">📘 Report</button>
+        <button class="nav-btn" data-tab="insights">📊 Insights</button>
+        <button class="nav-btn" data-tab="sustainability">🌍 Sustainability</button>
+        <button class="nav-btn" data-tab="safety">⚖️ Safety</button>
+        <button class="nav-btn" data-tab="reflection">💡 Reflection</button>
+        <button class="nav-btn" data-tab="share">🤝 Share</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <label><input id="themeToggle" type="checkbox" /> Dark Mode</label>
+        <small>Version 2.1</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div class="header-left">
+          <h2 id="currentTabTitle">ChemE Research Companion</h2>
+          <small class="muted">Your AI partner for Reports, Literature & Insights</small><br>
+          <div class="badge">Data Completeness: <span id="dataScore">0%</span></div>
+        </div>
+        <div class="header-right">
+          <div id="agentAvatar" class="agent-avatar" title="ChemBot Assistant">🤖</div>
+        </div>
+      </header>
+
+      <!-- Report Tab -->
+      <section id="report" class="tab-content active">
+        <div class="controls">
+          <div class="control-row">
+            <label for="taskSelect">Task Type</label>
+            <select id="taskSelect">
+              <option value="daily_report">Daily Project Report</option>
+              <option value="lit_review">Literature Review</option>
+              <option value="experimental">Experimental Procedure</option>
+            </select>
+            <button id="generateBtn" class="primary">Generate</button>
+            <button id="quickAnalyzeBtn">Quick Analyze</button>
+          </div>
+          <div class="toggles">
+            <label><input id="toggleSustain" type="checkbox" checked /> Add Sustainability</label>
+            <label><input id="toggleSafety" type="checkbox" checked /> Add Safety</label>
+            <label><input id="toggleReflection" type="checkbox" checked /> Add Reflection</label>
+          </div>
+        </div>
+
+        <div class="editor-grid">
+          <div class="input-card">
+            <label for="rawInput">Raw Notes / Data</label>
+            <textarea id="rawInput" placeholder="Type or paste experiment notes here..."></textarea>
+            <div class="input-footer">
+              <button id="parseTableBtn">Parse Table (auto)</button>
+              <button id="clearBtn">Clear</button>
+              <div id="autosaveStatus" class="autosave-indicator">Autosave: —</div>
+            </div>
+          </div>
+
+          <div class="output-card">
+            <label>Agent Output</label>
+            <div id="outputArea" class="output-area" contenteditable="false"><em>Your generated report will appear here...</em></div>
+            <div class="output-actions">
+              <button id="copyBtn">Copy</button>
+              <button id="pdfBtn">Download PDF</button>
+              <button id="gdocBtn">Open in Google Docs</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="tab-content">
+        <div class="card">
+          <h3>Data Visualization</h3>
+          <canvas id="chartCanvas" height="240"></canvas>
+        </div>
+        <div class="card">
+          <h3>AI Insights</h3>
+          <div id="aiInsights" class="ai-box"><em>No insights yet.</em></div>
+        </div>
+      </section>
+
+      <section id="sustainability" class="tab-content">
+        <div class="card">
+          <h3>Sustainability</h3>
+          <div id="ecoScoreLarge" class="eco-score">—</div>
+          <p id="ecoTipLarge" class="muted"></p>
+        </div>
+      </section>
+
+      <section id="safety" class="tab-content">
+        <div class="card">
+          <h3>Safety & Ethics</h3>
+          <div id="safetyBox" class="ai-box">No safety summary yet.</div>
+        </div>
+      </section>
+
+      <section id="reflection" class="tab-content">
+        <div class="card">
+          <h3>Reflection Questions</h3>
+          <ol id="reflectionList"><li>Generate a report to see reflection questions.</li></ol>
+        </div>
+      </section>
+
+      <section id="share" class="tab-content">
+        <div class="card">
+          <h3>Share</h3>
+          <button id="exportJsonBtn">Export JSON</button>
+          <button id="copyShareLinkBtn">Copy Summary</button>
+          <div id="sharePreview" class="ai-box">No shared content yet.</div>
+        </div>
+      </section>
+
+      <footer class="main-footer">
+        <small>Built for education </small>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Floating Chatbot -->
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chat-header">
+      <h3>💬 ChemBot Research Chat</h3>
+      <button id="closeChat">×</button>
+    </div>
+    <div id="chatMessages" class="chat-messages">
+      <div class="msg bot">Hello! I’m ChemBot — ask me anything about your experiment, data, or literature.</div>
+    </div>
+    <div class="chat-input">
+      <input id="chatText" type="text" placeholder="Ask a question..." />
+      <button id="sendChat">Send</button>
+    </div>
+  </div>
+  <div id="openChatBtn" class="floating-chat-bot" title="Chat with ChemBot">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="ChemBot">
+  <span class="chat-label">ChemBot</span>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
