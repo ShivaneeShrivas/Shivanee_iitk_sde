@@ -5,21 +5,7 @@ Shivanee Shrivas, IIT Kanpur, Chemical Department
 Overview
 ChemE Research Companion is an AI-powered assistant designed to help Chemical Engineering students and researchers organize experimental notes, generate professional reports, and interact with an intelligent chatbot (ChemBot) for guidance.
 
-The system provides:
-Automated report generation from lab notes
-Literature review and procedure formatting
-Safety and sustainability analysis
-Data visualization support
-Chat-based Q&A and research assistance
-
-Features:
-Category - Description
-AI Agent - Converts raw experimental notes into structured scientific reports
-Chatbot (ChemBot) -	Provides intelligent suggestions, answers queries, and research guidance
-Sustainability - Advisor	Adds sustainability and safety notes automatically
-Data Visualization -	Auto-generates simple plots from tabular data
-Export Options	- Export reports as PDF or Google Docs
-Dark Mode	Smooth and accessible UI for all users
+The core function is Automated Report Generation, where the AI Agent converts raw experimental notes directly into structured scientific reports. Enhancing the research workflow, the Chatbot (ChemBot) provides instant Q&A, literature review, and research assistance, offering intelligent suggestions and guidance. Crucially, the Sustainability Advisor feature ensures rigorous standards by automatically adding safety and sustainability analysis notes to procedures. For data handling, the system includes Data Visualization support, auto-generating simple plots from tabular data. Finally, user experience is prioritized with Dark Mode for an accessible UI, and robust Export Options allowing reports to be saved as PDF or Google Docs.
 
 ## System Architecture
 
@@ -40,11 +26,10 @@ Dark Mode	Smooth and accessible UI for all users
 | **Version Control** | Git & GitHub | Collaboration and submission |
 
 Component Breakdown:
-Component	- Description
-index.html -	User interface layout
-style.css -	UI/UX styling with modern design principles
-script.js	- Handles user interaction, chatbot UI, and backend API calls
-server.js -	Node.js backend server handling API requests
+index.html -	User interface layout, 
+style.css -	UI/UX styling with modern design principles, 
+script.js	- Handles user interaction, chatbot UI, and backend API calls, 
+server.js -	Node.js backend server handling API requests, 
 interaction logs
 
 ### System Design Flow
