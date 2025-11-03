@@ -28,8 +28,7 @@ Component Breakdown:
 index.html -	User interface layout, 
 style.css -	UI/UX styling with modern design principles, 
 script.js	- Handles user interaction, chatbot UI, and backend API calls, 
-server.js -	Node.js backend server handling API requests, 
-interaction logs
+server.js -	Node.js backend server handling API requests
 
 ### System Design Flow
 
