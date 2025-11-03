@@ -21,16 +21,9 @@ Data Visualization -	Auto-generates simple plots from tabular data
 Export Options	- Export reports as PDF or Google Docs
 Dark Mode	Smooth and accessible UI for all users
 
-System Architecture
-Frontend (HTML/CSS/JS)
-│
-├── User Interface (Report Form, ChatBot Panel)
-│
-└── Fetch API → Backend (Node.js + Express)
-        │
-        ├── Routes: /api/generate
-        ├── LLM API call (Gemini)
-        └── Response → Structured report text
+### System Design Flow
+
+**User Interface** (Action) $\rightarrow$ **Frontend JS** (API Call) $\rightarrow$ **Express Backend** (Relay) $\rightarrow$ **Gemini AI API** (Processing) $\rightarrow$ **Structured Output** (Report/Insights)
 
 Component Breakdown:
 Component	- Description
