@@ -21,9 +21,24 @@ Data Visualization -	Auto-generates simple plots from tabular data
 Export Options	- Export reports as PDF or Google Docs
 Dark Mode	Smooth and accessible UI for all users
 
-### System Design Flow
+## ⚙️ System Architecture
 
-**User Interface** (Action) $\rightarrow$ **Frontend JS** (API Call) $\rightarrow$ **Express Backend** (Relay) $\rightarrow$ **Gemini AI API** (Processing) $\rightarrow$ **Structured Output** (Report/Insights)
+| Component | Description |
+| :--- | :--- |
+| **Frontend** | HTML/CSS/JS |
+| **Backend** | Node.js + Express |
+| **AI Model** | Gemini API |
+
+---
+
+## Technologies Used
+
+| Stack | Technology | Reason for Choice |
+| :--- | :--- | :--- |
+| **Frontend** | HTML5, CSS3, JavaScript | Simplicity and responsiveness |
+| **Backend** | Node.js (Express) | Lightweight, fast, and ideal for APIs |
+| **AI Model** | Gemini API | Contextual and reliable responses |
+| **Version Control** | Git & GitHub | Collaboration and submission |
 
 Component Breakdown:
 Component	- Description
