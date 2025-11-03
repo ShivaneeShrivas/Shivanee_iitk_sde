@@ -2,7 +2,6 @@ ChemE Research Companion
 
 Shivanee Shrivas, IIT Kanpur, Chemical Department
 
-Overview
 ChemE Research Companion is an AI-powered assistant designed to help Chemical Engineering students and researchers organize experimental notes, generate professional reports, and interact with an intelligent chatbot (ChemBot) for guidance.
 
 The core function is Automated Report Generation, where the AI Agent converts raw experimental notes directly into structured scientific reports. Enhancing the research workflow, the Chatbot (ChemBot) provides instant Q&A, literature review, and research assistance, offering intelligent suggestions and guidance. Crucially, the Sustainability Advisor feature ensures rigorous standards by automatically adding safety and sustainability analysis notes to procedures. For data handling, the system includes Data Visualization support, auto-generating simple plots from tabular data. Finally, user experience is prioritized with Dark Mode for an accessible UI, and robust Export Options allowing reports to be saved as PDF or Google Docs.
